@@ -18,6 +18,10 @@
         <java.version>1.8</java.version>
         <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
         <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+        <sonar.projectKey>gpandeya_ratings-data-service</sonar.projectKey>
+	  	<sonar.organization>gpandeya</sonar.organization>
+	 	<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+	  	<sonar.login>75f25e4fbb1af19f5b37d72267306855dfe66bff</sonar.login>
 	</properties>
 
 	<dependencies>
@@ -59,7 +63,19 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.3.0.603</version>
+				<executions>
+				<execution>
+				<phase>verify</phase>
+				<goals>
+				<goal>sonar</goal>
+				</goals>
+				</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
-
 </project>
